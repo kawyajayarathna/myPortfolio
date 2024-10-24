@@ -1,0 +1,500 @@
+:root {/*This defines CSS variables for colors used throughout the website to manage and change easily in this place or with design changes.*/
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: #00ffee;
+}
+html {
+    font-size: 60%;/*This is helpful for scaling font sizes with relative units like rem because it sets the base font size to 60% of the default. obstructs horizontal overflow to stop excessive scrolling.*/
+    overflow-x: hidden;
+}
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: var(--second-bg-color); 
+    padding: 10px 20px;
+    position: relative;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px; 
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Brush Script MT', cursive;
+    margin-right:25rem;
+}
+.logo span {
+    color:var(--main-color);
+    margin-left: 5px;
+    font-family: 'Brush Script MT', cursive;
+}
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 50px;
+    position: right;
+    justify-content: center;
+}
+.nav a {
+    position : relative;
+    cursor: pointer;
+    color: white;
+    font-size: 28px;
+    padding: 0.5rem 1rem;
+    transition: color 0.25s;
+    text-decoration: none;
+}
+.nav a::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: var(--text-color);
+    scale: 1 0;
+    z-index: -1;
+    transition: 0.45s;
+    border-radius: 10px;
+}
+.nav a:hover {
+    color: var(--second-bg-color);
+}
+.nav a:hover::after {
+    scale:1 1;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+.footer {
+    margin-top:auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: var(--bg-color); 
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.footer a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+
+.section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+.Main {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap :5rem;
+    flex-direction: row;
+    min-height: 100vh; 
+    padding: 10rem 12% 10rem; 
+}
+.Main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+}
+
+.Main-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.Main-content h1{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+.Main-image{
+    flex: 0;
+    border-radius: 50%;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+}
+.Main-image img{
+    width: 30vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.Main-image img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.Main-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+.animated-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Start with zero width */
+    animation: typing 3s steps(30) forwards;
+    font-size: 3.5rem;
+    vertical-align: middle;
+}
+.social-aside {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-media {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media li {
+    display: inline-block;
+}
+
+.social-media a {
+    color: #00ffee;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #080808;
+    background: #00ffee;
+    box-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+}
+/* Typing Effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 23ch; }
+}
+/* Blinking cursor */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+/* About Page */
+.container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center all sections */
+    padding: 2rem; /* Padding around the container */
+}
+
+.box {
+    width: 100%; /* Full width for sections */
+    max-width: 1000px; /* Maximum width for sections */
+    padding: 20px; /* Padding inside sections */
+    margin: 1rem 0; /* Space between sections */
+    background: var(--second-bg-color); /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    min-height: 300px; /* Set a fixed height for uniformity */
+    display: flex; /* Use flexbox to structure content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Distribute space evenly */
+}
+h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--main-color);
+    text-align: center; /* Center text */
+}
+
+p {
+    font-size: 1.6rem;
+    text-align: center; /* Center text */
+}
+h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem; /* Adds space between description and contact details */
+}
+
+.contact-details {
+    flex: 0 0 30%; /* Set a fixed width for contact details */
+    text-align: right;
+    background: rgba(255, 255, 255, 0.1); /* Light background for contrast */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-details p {
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.contact-details i {
+    color: var(--main-color); /* Icon color */
+    margin-right: 0.5rem; /* Space between icon and text */
+}
+
+.contact-details a {
+    color: var(--main-color);  
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.description {
+    flex: 1; /* Takes up remaining space */
+    max-width: 65%; 
+}
+
+/* Skills Section */
+.skills-container { 
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skill-bar {
+    flex-basis: 45%;
+    background-color: var(--bg-color);
+    border-radius: 10px; 
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-bar p {
+    font-size: 1.6rem; 
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 8px;
+    width: 100%;
+}
+
+.progress {
+    background-color: var(--main-color);
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Education Section */
+.timeline-items {
+    max-width: 900px; 
+    margin: auto; 
+    display: flex;
+    flex-wrap: wrap; 
+    position: relative;
+}
+
+.timeline-items::before {
+    content: ""; 
+    position: absolute;
+    width: 5px; 
+    height: 52%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px); 
+}
+
+.timeline-item {
+    margin-bottom: 40px; 
+    width: 100%; 
+    position: relative; 
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0; 
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px); 
+    text-align: right; 
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px); 
+}
+
+.timeline-dot {
+    height: 21px; 
+    width: 21px; 
+    background-color: var(--main-color); 
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color); 
+    position: absolute;
+    left: calc(50% - 8px); 
+    border-radius: 50%; 
+    top: 0; 
+}
+
+.timeline-date {
+    font-size: 20px;
+    font-weight: 800; 
+    color: var(--text-color);
+    margin: 6px 0 15px; 
+}
+
+.timeline-content {
+    background-color: var(--bg-color); 
+    border: 3px solid var(--main-color); 
+    padding: 30px 50px; 
+    border-radius: 4rem; 
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer; 
+    transition: 0.3s ease-in-out; 
+}
+
+.timeline-content:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: var(--text-color);
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+/* Interests Section */
+#interests {
+    font-size: 18px;
+}
+/*Projects page*/
+.project-section {
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+  }
+  
+  .project-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .project-section .highlight {
+    background-color: #e0e0e0; /* Highlighting color */
+    color: black; /* Adjust text color for better readability */
+    padding: 0 4px; /* Space around the highlighted text */
+    border-radius: 4px; /* Rounded corners for highlight */
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px;
+    max-width: 900px; /* Reduce max width for a narrower layout */
+    margin: 0 auto;
+  }
+  
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #111; /* Dark background behind image */
+    height: 220px; /* Card height */
+    width: 280px; /* Fixed width for uniformity */
+    margin: 0 auto; /* Center the card itself within its grid column */
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px) scale(1.03) rotate(1deg);
+    box-shadow: 0 8px 15px rgba(0, 255, 238, 0.4); /* Enhanced shadow */
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .project-card:hover img {
+    transform: scale(1.1) rotate(-2deg); /* Image zoom and slight rotation */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 255, 238, 0.7), rgba(255, 255, 255, 0.5));
+    color: black;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center;
+  }
+  
+  .project-card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0) scale(1.05); /* Subtle overlay scaling */
+  }
+  
+  .overlay p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .overlay .icon-link {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+/* Add margin to the first card in the second row */
+.project-grid .project-card:nth-child(4) {
+    margin-left: 60px; /* Adjust this value as needed for more space */
+  }
+  

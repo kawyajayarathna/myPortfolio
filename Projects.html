@@ -10,13 +10,20 @@
 <body>
   <header>
     <nav class="nav">
-      <ul><li class='logo'>Sharadee<span>Jayarathna</span></li></ul>
+        <li class='logo'>Sharadee<span>Jayarathna</span></li>
+        <input type="checkbox" id="menu-toggle"/>
+        <label for="menu-toggle" class="menu-icon">
+            &#9776;<!--Hamburger icon-->
+            </label>
+            <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="About.html">About</a>
         <a href="Projects.html">Projects</a>
         <a href="Contacts.html">Contacts</a>
+    </div>
     </nav>
-  </header>
+</header>
+
 
     <div class="project-section">
       <h2>Latest <mark class="highlight">Projects</mark></h2>
@@ -62,20 +69,22 @@
         </div>
       </div>
       
-        <!-- Blog Post 1 -->
         <article class="blog-post">
             <h3>The Journey of Learning Web Development</h3>
-            <p><strong>Date: </strong>October 20, 2024</p>
+            <p><strong>Date: </strong>
+              <time datetime="2024-10-20">October 20, 2024</time>
+            </p>
             <p>
                 As I embark on my journey to become a web developer, I am continually inspired by the endless possibilities that the web offers. From creating interactive user interfaces to developing back-end functionality, every aspect of web development fascinates me. 
                 In my upcoming projects, I plan to focus on using Java for back-end development, as it provides a solid framework for building robust applications.
             </p>
         </article>
 
-        <!-- Blog Post 2 -->
         <article class="blog-post">
             <h3>Why I Love Java for Web Development</h3>
-            <p><strong>Date: </strong>October 15, 2024</p>
+            <p><strong>Date: </strong>
+            <time datetime="2024-10-15">October 15,2024</time>
+          </p>
             <p>
                 Java has always been one of my favorite programming languages, primarily due to its versatility and performance. It's an excellent choice for building dynamic web applications. The ability to use frameworks like Spring makes it easier to create powerful web applications with a strong emphasis on security and scalability. 
                 I am excited to explore more of Java's capabilities in my projects.
